@@ -155,20 +155,22 @@ if uploaded_files:
                     st.markdown(get_download_link(pdf_buffer, filename), unsafe_allow_html=True)
                     
                     # サーバー保存ボタンを表示
-                    st.session_state.show_save_button = True
+                    #st.session_state.show_save_button = True
                     
                 except Exception as e:
                     st.error(f"PDFの生成中にエラーが発生しました: {e}")
                     st.exception(e)  # 詳細なエラー情報を表示
         
         # サーバー保存ボタン（PDFが生成されている場合のみ表示）
-        if st.session_state.get('show_save_button', False):
-            if st.button("サーバーに保存"):
-                try:
-                    save_path = save_pdf_to_server(st.session_state.pdf_buffer, st.session_state.pdf_filename)
-                    st.success(f"PDFがサーバーに保存されました！ 保存先: {save_path}")
-                except Exception as e:
-                    st.error(f"サーバーへの保存中にエラーが発生しました: {e}")
+        
+        #if st.session_state.get('show_save_button', False):
+          # if st.button("サーバーに保存"):
+           #     try:
+            #        save_path = save_pdf_to_server(st.session_state.pdf_buffer, st.session_state.pdf_filename)
+             #       st.success(f"PDFがサーバーに保存されました！ 保存先: {save_path}")
+              #  except Exception as e:
+               #     st.error(f"サーバーへの保存中にエラーが発生しました: {e}")
+                #    '''
 
 # 使い方の説明
 if not uploaded_files:
